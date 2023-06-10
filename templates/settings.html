@@ -1,0 +1,90 @@
+{%extends 'main_layout.html' %}
+{% block title %} settings {% endblock %}
+{% block content %}
+<div class="col-2">
+    <div class="card user-card user-card-1">
+      <div class="card-body pb-0">
+        <div class="media user-about-block align-items-center mt-0 mb-3">
+          <div class="position-relative d-inline-block">
+            <div class="certificated-badge">
+              <a href="javascript:void(0)" class="mb-3 nav-link">
+                <span class="sw-icon fas fa-cog"></span>
+              </a>
+            </div>
+          </div>
+          <div class="media-body ml-3">
+            <h6 class="mb-1"> Settings </h6>
+            <p class="mb-0 text-muted"> Configuration </p>
+          </div>
+        </div>
+      </div>
+      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link list-group-item list-group-item-action active" id="account-settings-tab" data-toggle="pill" href="#account-settings" role="tab" aria-controls="account-settings" aria-selected="true">
+          <span class="f-w-500">
+            <i class="feather icon-disc m-r-10 h5 "></i> System </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="account-system-logos-tab" data-toggle="pill" href="#account-system-logos" role="tab" aria-controls="account-system-logos" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-image m-r-10 h5 "></i> System Logo </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="account-payment-tab" data-toggle="pill" href="#account-payment" role="tab" aria-controls="account-payment" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-credit-card m-r-10 h5 "></i> Payment Gateway </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="account-notification-tab" data-toggle="pill" href="#account-notification" role="tab" aria-controls="account-notification" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-crosshair m-r-10 h5 "></i> Notification Position </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="user-set-email-tab" data-toggle="pill" href="#user-set-email" role="tab" aria-controls="user-set-email" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-mail m-r-10 h5 "></i> Email Settings </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="user-set-sms-tab" data-toggle="pill" href="#user-set-sms" role="tab" aria-controls="user-set-sms" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-message-circle m-r-10 h5 "></i> SMS Settings </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="user-set-modules-tab" data-toggle="pill" href="#user-set-modules" role="tab" aria-controls="user-set-modules" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-target m-r-10 h5 "></i> Setup Modules </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+        <a class="nav-link list-group-item list-group-item-action" id="user-set-theme-tab" data-toggle="pill" href="#user-set-theme" role="tab" aria-controls="user-set-theme" aria-selected="false">
+          <span class="f-w-500">
+            <i class="feather icon-layout m-r-10 h5 "></i> Theme Settings </span>
+          <span class="float-right">
+            <i class="feather icon-chevron-right"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <style>
+    .card {
+      position: relative;
+      left: 200px;  
+      top:90px;
+    }
+  </style>
+
+
+{% endblock %}

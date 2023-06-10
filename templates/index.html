@@ -1,0 +1,135 @@
+{% extends 'main_layout.html' %}
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+<div id="content" class="main-content">
+    <!--  Navbar Starts / Breadcrumb Area  -->
+    <div class="sub-header-container">
+      <header class="header navbar navbar-expand-sm">
+        <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom">
+          <i class="las la-bars">
+          </i>
+        </a>
+        <ul class="navbar-nav flex-row">
+          <li>
+            <div class="page-header">
+              <nav class="breadcrumb-one" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="javascript:void(0);">Dashboard
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </li>
+        </ul>
+      </header>
+    </div>
+    <!--  Navbar Ends / Breadcrumb Area  -->
+    <!-- Main Body Starts -->
+    <div class="layout-px-spacing">
+      <div class="row layout-top-spacing">
+        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+          <a class="widget quick-category">
+            <div class="quick-category-head">
+              <span class="quick-category-icon qc-primary rounded-circle">
+                <i class="las la-shopping-cart">
+                </i>
+              </span>
+              <div class="ml-auto">
+                <div class="quick-comparison qcompare-success">
+                  <span>20%
+                  </span>
+                  <i class="las la-arrow-up">
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div class="quick-category-content">
+              <h3>2189
+              </h3>
+              <p class="font-17 text-primary mb-0">Products Sold
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+          <a class="widget quick-category">
+            <div class="quick-category-head">
+              <span class="quick-category-icon qc-warning rounded-circle">
+                <i class="las la-box">
+                </i>
+              </span>
+              <div class="ml-auto">
+                <div class="quick-comparison qcompare-danger">
+                  <span>10%
+                  </span>
+                  <i class="las la-arrow-down">
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div class="quick-category-content">
+              <h3>500
+              </h3>
+              <p class="font-17 text-warning mb-0">New Orders
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+          <a class="widget quick-category">
+            <div class="quick-category-head">
+              <span class="quick-category-icon qc-secondary rounded-circle">
+                <i class="las la-hand-holding-usd">
+                </i>
+              </span>
+              <div class="ml-auto">
+                <div class="quick-comparison qcompare-success">
+                  <span>40%
+                  </span>
+                  <i class="las la-arrow-up">
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div class="quick-category-content">
+              <h3>$3465
+              </h3>
+              <p class="font-17 text-secondary mb-0">Monthly Sales
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+          <a class="widget quick-category">
+            <div class="quick-category-head">
+              <span class="quick-category-icon qc-success-teal rounded-circle">
+                <i class="las la-user-plus">
+                </i>
+              </span>
+              <div class="ml-auto">
+                <div class="quick-comparison qcompare-danger">
+                  <span>50%
+                  </span>
+                  <i class="las la-arrow-down">
+                  </i>
+                </div>
+              </div>
+            </div>
+            <div class="quick-category-content">
+              <h3>35
+              </h3>
+              <p class="font-17 text-success-teal mb-0">New Customers
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Main Body Ends -->
+  </div>
+  
+{% endblock %}
