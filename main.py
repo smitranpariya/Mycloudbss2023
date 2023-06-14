@@ -6,7 +6,7 @@ import bcrypt
 
 app = Flask(__name__)
 #database
-app.config["MONGO_URI"] = "mongodb+srv://188.166.154.192/mycloudbss"
+app.config["MONGO_URI"] = "mongodb+srv://smitranpariya30:gw1u2rpX8s3nvLn7@mycloudbss2023.zajjr9o.mongodb.net/mycloudbss2023"
 mongo = PyMongo(app) 
 app.secret_key = "testing" 
 
