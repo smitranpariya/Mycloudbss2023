@@ -1,146 +1,248 @@
 {%extends 'main_layout.html' %}
 {% block title %} settings {% endblock %}
 {% block content %}
-<div class="col-2">
-    <div class="card user-card user-card-1">
-      <div class="card-body pb-0">
-        <div class="media user-about-block align-items-center mt-0 mb-3">
-          <div class="position-relative d-inline-block">
-            <div class="certificated-badge">
-              <a href="javascript:void(0)" class="mb-3 nav-link">
-                <span class="sw-icon fas fa-cog mb-1"></span>
-              </a>
+
+<div class="widget-content1 widget-content-area col-lg-10">
+    <div class="button-list">
+        <button id="system" class="btn btn-primary mb-1">system</button>
+        <button id="system_logo" class="btn btn-primary mb-1">system-logo</button>
+        <button id="payment_gateway" class="btn btn-primary mb-1">payment Gateway</button>
+        <button id="notification_position" class="btn btn-primary mb-1">notification position</button>
+        <button id="email_Setting" class="btn btn-primary mb-1">email Setting</button>
+        <button id="sms_settings" class="btn btn-primary mb-1">sms settings</button>
+        <button id="setup_modules" class="btn btn-primary mb-1">setup modules</button>
+        <button id="theme_settings" class="btn btn-primary mb-1">Theme settings</button>
+    </div>
+</div>
+<div class="form" id="system_div"  >
+    <div class="col-lg-12  layout-spacing"  >
+      <div class="statbox widget box box-shadow mb-4 col-xl-15"  >
+        <div class="widget-header">
+          <div class="row">
+            <div class="col-xl-10 col-md-10 col-sm-10 col-10">
+              <h4>system</h4>
             </div>
           </div>
-          <div class="media-body ml-1">
-            <h5 class="mb-1"> Settings </h5>
-            <p class="mb-0 text-muted"> Configuration </p>
+        </div>
+        <form method="post" name="system-setting" action="">
+        <div class=" widget-content widget-content-area col-md-12"  >
+          <div class="w-100">
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label>Application Name<span class="required" style="color:red">* </span>
+                </label>
+                <input type="email"  class="form-control" name="application_name" placeholder="Enter Application name">
+                <span class="form-text text-muted">Please enter your Application name</span>
+              </div>
+              <div class="col-md-6">
+                <label>company name<span class="required" style="color:red">* </span>
+                </label>
+                <input type="email" class="form-control"  name="company_name" placeholder="Enter company name">
+                <span class="form-text text-muted">Please enter your company name</span>
+              </div>
+            </div>
           </div>
         </div>
+        <hr>
+        <h6 class="mb-4">Installed SSL?</h6>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input"  id="ssl_available?" name="ssl_available?" value="1">
+        <label class="custom-control-label" for="ssl_available?" >
+          If you have installed ssl on your server then you can enable this option,
+           because you can easily get the employee clock-in/out location in
+        </label>
       </div>
-      <div class="nav flex-column nav-pills list-group list-group-flush list-pills" id="user-set-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link list-group-item list-group-item-action active" id="account-settings-tab"  href="" role="tab" aria-controls="account-settings" aria-selected="true">
-          <span class="f-w-500">
-            <i class="feather icon-disc m-r-10 h5 "></i> System </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="account-system-logos-tab"  href="" role="tab" aria-controls="account-system-logos" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-image m-r-10 h5 "></i> System Logo </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="account-payment-tab"  href="#account-payment" role="tab" aria-controls="account-payment" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-credit-card m-r-10 h5 "></i> Payment Gateway </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="account-notification-tab"  href="#account-notification" role="tab" aria-controls="account-notification" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-crosshair m-r-10 h5 "></i> Notification Position </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-email-tab"  href="#user-set-email" role="tab" aria-controls="user-set-email" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-mail m-r-10 h5 "></i> Email Settings </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-sms-tab"  href="#user-set-sms" role="tab" aria-controls="user-set-sms" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-message-circle m-r-10 h5 "></i> SMS Settings </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-modules-tab"  href="#user-set-modules" role="tab" aria-controls="user-set-modules" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-target m-r-10 h5 "></i> Setup Modules </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
-        <a class="nav-link list-group-item list-group-item-action" id="user-set-theme-tab"  href="#user-set-theme" role="tab" aria-controls="user-set-theme" aria-selected="false">
-          <span class="f-w-500">
-            <i class="feather icon-layout m-r-10 h5 "></i> Theme Settings </span>
-          <span class="float-right">
-            <i class="feather icon-chevron-right"></i>
-          </span>
-        </a>
+        <div class="widget-footer text-right">
+          <button type="submit" class="btn btn-primary mr-2">save</button>
+          <button type="reset" class="btn btn-outline-primary">Cancel</button>
+        </div>
+        </form>
       </div>
     </div>
   </div>
-<div class="form">
-  <div class="col-lg-15  layout-spacing">
-    <div class="statbox widget box box-shadow mb-4">
-      <div class="widget-header">
-        <div class="row">
-          <div class="col-xl-20 col-md-20 col-sm-20 col-20">
-            <h4>system</h4>
+
+  <!-- form 2 starts here -->
+  <div class="form-2" id="system_logo_div" style="display: none;" >
+    <div class="col-lg-15  layout-spacing"  >
+      <div class="statbox1 widget box box-shadow mb-4" >
+        <div class="widget-header">
+          <div class="row" >
+            <div class="col-xl-20 col-md-20 col-sm-20 col-20">
+              <h4>system logo</h4>
+            </div>
           </div>
+        </div>
+        <form method="post" id="system-logo" action="">
+        <div class="widget-content widget-content-area">
+          <div class="w-100">
+            <div class="form-group row">
+              <div class="col-md-6">
+                <label>system logo<span class="required" style="color:red">* </span>
+                </label>
+                <input type="file"  class="form-control" name="sytem-logo" placeholder="">
+                <span class="form-text text-muted">upload files only:png</span>
+              </div>
+              <div class="col-md-6">
+                <label>favicon<span class="required" style="color:red">* </span>
+                </label>
+                <input type="file" class="form-control"  name="favicon" placeholder="">
+                <span class="form-text text-muted">upload files only:png</span>
+              </div>  
+              <br/>
+              <div class="col-md-6" style="padding-top: 20px;">
+                <label>pay/invoice logo<span class="required" style="color:red">* </span>
+                </label>
+                <input type="file" class="form-control"  name="pay_invoice_logo" placeholder="">
+                <span class="form-text text-muted">upload files only:png</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="widget-footer text-right">
+          <button type="submit" class="btn btn-primary mr-2">save</button>
+          <button type="reset" class="btn btn-outline-primary">Cancel</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- form2 ends here -->
+  <!-- form3 starts here -->
+  <div class="statbox3 widget box box-shadow col-xl-9" style="padding-bottom: 50px;display: none;" id="payment_gateaway_div">
+    <div class="widget-header" >
+      <div class="row" >
+        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+          <h4>payment gateaway</h4>
         </div>
       </div>
-      <div class="widget-content widget-content-area">
-        <div class="w-100">
-          <div class="form-group row">
-            <div class="col-md-6">
-              <label>Application Name<span class="required" style="color:red">* </span>
-              </label>
-              <input type="email"  class="form-control" name="application_name" placeholder="Enter Application name">
-              <span class="form-text text-muted">Please enter your Application name</span>
-            </div>
-            <div class="col-md-6">
-              <label>company name<span class="required" style="color:red">* </span>
-              </label>
-              <input type="email" class="form-control"  name="company_name" placeholder="Enter company name">
-              <span class="form-text text-muted">Please enter your company name</span>
-            </div>
-          </div>
-        </div>
+    </div>
+    <form method="post" action="">
+    <div class="widget-content widget-content-area" style="padding-bottom: 50px;padding-top: 1px;" >
+      <div class="form-group row">
+        <div class="col-md-6">
+        <label> paypal Email address <span class="text-danger">*</span>
+        </label>
+        <input type="email" class="form-control" placeholder="Enter email">
+        <span class="form-text text-muted">We'll never share your email with anyone else.</span>
+      </div>
+      <div class="col-md-6">
+        <label for="exampleInputPassword1">Password <span class="text-danger">*</span>
+        </label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
       </div>
       <hr>
-      <h6 class="mb-4">Installed SSL?</h6>
-    <div class="custom-control custom-switch">
-      <input type="checkbox" class="custom-control-input"  id="ssl_available?" name="ssl_available?" value="1">
-      <label class="custom-control-label" for="ssl_available?" >
-        If you have installed ssl on your server then you can enable this option,
-         because you can easily get the employee clock-in/out location in
-      </label>
-    </div>
-      <div class="widget-footer text-right">
-        <button type="submit" class="btn btn-primary mr-2">save</button>
-        <button type="reset" class="btn btn-outline-primary">Cancel</button>
+      <div class="form-group1 row  " style="padding-right:40px ;">
+        <div class="col-md-6">
+        <label for="exampleSelect1">paypal sandbox <span class="text-danger required" >*</span>
+        </label>
+        <select class="form-control" id="exampleSelect1">
+          <option>yes</option>
+          <option>no</option>
+        </select>
       </div>
+      <div class="col-md-6">
+        <label for="exampleSelect1">Active <span class="text-danger">*</span>
+        </label>
+        <select class="form-control" id="exampleSelect1">
+          <option>yes</option>
+          <option>no</option>
+        </select>
+      </div>
+      </div>
+      <div class="form-group2 " style=" align-self: auto;;">
+        <label for="exampleInputPassword1">stripe secrect key <span class="text-danger">*</span>
+        </label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder=" enter stripe secrect key">
+      </div>
+      <div class="form-group3 " style="padding-bottom:20px ;">
+        <label for="exampleInputPassword1">stripe publishable key <span class="text-danger">*</span>
+        </label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder=" enter stripe publishable key">
+      </div>
+      <div class="form-group4 " style="padding-bottom:20px ;">
+        <label for="exampleSelect1">Active <span class="text-danger">*</span>
+        </label>
+        <select class="form-control" id="exampleSelect1">
+          <option>yes</option>
+          <option>no</option>
+        </select>
     </div>
+    </div>
+    <div class="widget-footer1 text-right">
+      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+      <button type="reset" class="btn btn-outline-primary">Cancel</button>
+    </div>
+</form>
   </div>
 </div>
-  <style>
-    .card {
-      position: relative;
-      left: 200px;  
-      top:90px;
-      border: 2px solid blanchedalmond;
-    }
+        <style>
+            .widget-content1{
+                position: relative;
+                top:60px;
+                left:200px;
+            }
 
-    .form {
-      position: relative;
-      left:200px;
-      top:90px;
-      width: 1000px;
-      height:max-content;
-    }
+             .statbox{
+                position: relative;
+                bottom:20px;
+                left:200px;
+            }
+            
+            .statbox1{
+                position: relative;
+                left: 220px;
+                bottom:20px;
+            }      
 
+            .statbox3{
+                position: relative;
+                left: 220px;
+                top: 60px;
 
-    
-  </style> 
+            } 
 
+            .form-group1{
+                position: relative;
+                bottom:50px;
+            }
 
+            .form-group2{
+                position: relative;
+                bottom:30px;
+                right:5px;
+            }
+
+            .form-group3{
+                position: relative;
+                bottom:10px;
+                right:5px;
+            }
+            
+            .widget-footer1{
+                position: relative;
+                bottom:10px;
+            }
+        </style>
+  
+{% block script %}
+<script>
+  $("#system").click(function(){
+    $("#system_div").show();
+    $("#system_logo_div").hide();
+    $("#payment_gateaway_div").hide();
+  });
+  $("#system_logo").click(function(){
+    $("#system_logo_div").show();
+    $("#system_div").hide();
+    $("#payment_gateaway_div").hide();
+  });
+  $("#payment_gateway").click(function(){
+    $("#payment_gateaway_div").show();
+    $("#system_div").hide();
+    $("#system_logo_div").hide();
+  });
+</script>
+{% endblock %}
 {% endblock %}
