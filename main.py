@@ -82,6 +82,53 @@ def logout():
 	session.pop('email',None)
 	return redirect('/ret_login')
 
+@app.route('/dashboard/wifi_customer', methods=['POST','GET'])
+def wifi_customer():
+    db = mongo.db
+    user = db.admins.find_one({"email":session['email']})    
+
+    if request.method == 'POST':
+        db=mongo.db
+        doc_number = request.form.get("doc_number")
+        first_name = request.form.get("first_name")
+        last_name = request.form.get("last_name")
+        sim_card = request.form.get("sim_card")
+        offer_id = request.form.get("offer_id")
+        em_ail =  request.form.get("_email")
+        date_of_birth = request.form.get("date_of_birth")
+        mobile_No = request.form.get("mobile_No")
+        landmark = request.form.get("landmark")
+        pass_word = request.form.get("_password")
+        confirm_password = request.form.get("_confirmpassword")
+        adress = request.form.get("adress")
+        pincode = request.form.get("pincode")
+        state = request.form.get("state")
+        status= request.form.get("status")
+
+        hashed = bcrypt.hashpw(confirm_password.encode('utf-8'), bcrypt.gensalt())
+        if pass_word != confirm_password:
+            message1 = "password shouldn't match"
+            return message1
+        else:
+            form_input = {"doc_number":doc_number,
+                           "first_name":first_name,
+                           "last_name":last_name,
+                           "sim_card":sim_card,
+                           "offer_id":offer_id, 
+                           "_email":em_ail,
+                           "date_of_birth":date_of_birth,
+                           "mobile_No":mobile_No,
+                           "landmark":landmark,
+                           "_password":hashed,
+                           "adress":adress,
+                           "pincode":pincode,
+                           "state":state,
+                           "status":status}
+            db.wifi_customer.insert_one(form_input)
+            return render_template("wifi_customer.html",user=user)
+    else:
+        return render_template("wifi_customer.html",user=user)
+    
 @app.route('/dashboard/lte_customer', methods=['POST','GET'])
 def lte_customer():
     db = mongo.db
@@ -124,7 +171,7 @@ def lte_customer():
                            "pincode":pincode,
                            "state":state,
                            "status":status}
-            db.customer.insert_one(form_input)
+            db.lte_customer.insert_one(form_input)
             return render_template("lte_customer.html",user=user)
     else:
         return render_template("lte_customer.html",user=user)
