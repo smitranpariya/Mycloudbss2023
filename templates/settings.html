@@ -457,23 +457,81 @@
 <style>
     .statbox1{
       position: relative;
-      left: 200px;  
-      top:90px;
+      height: max-content;
     }
+ @media (max-width: 768px) {
+  .statbox1 {
+    position: static;
+    margin-top: 20px;
+  }
+}
 
+@media (min-width: 769px) and (max-width: 991px) {
+  .statbox1 {
+    left: 200px;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .statbox1 {
+    left: 200px;
+    top: 90px;
+  }
+}
+
+
+    .statbox4 {
+  position: relative;
+  height: max-content;
+}
+@media (max-width: 768px) {
+  .statbox4 {
+    position: static;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 769px) and (max-width: 991px) {
+  .statbox4 {
+    left: 200px;
+    bottom: 0;
+  }
+}
+
+@media (min-width:992px){
     .statbox4{
-      position: relative;
       left:465px;
-      bottom:525px;
-      height:max-content;
+      bottom:595px;
     }
-   
-    .statbox5{
-      position: relative;
-      left:450px;
-      bottom:525px;
-      height:max-content;
-    }
+  }
+/* stat4 ends */
+    .statbox5 {
+  position: relative;
+  height: max-content;
+}
+
+@media (max-width: 768px) {
+  .statbox5 {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .statbox5 {
+    left: 200px;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .statbox5 {
+    left: 450px;
+    bottom: 595px;
+  }
+}
 
     
 
