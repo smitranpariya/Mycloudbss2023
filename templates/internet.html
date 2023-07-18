@@ -1,0 +1,324 @@
+{% extends 'main_layout.html'%}
+{% block content%}
+
+<!-- modal starts -->
+<div id="content" class="main-content">
+  <div class="col-lg-12 layout-spacing">
+    <div class="container">
+      <div class="row justify-content-end">
+        <div class="col-4">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal"> + Add internet </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content widget" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new internet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times; </span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name='internet' action="#" method="post"> {% if message  %} <div class="alert alert-secondary" role="alert">
+            <p>{{ message }}</p>
+          </div> {% endif %} <div class=" ">
+            <div class="w-100">
+              <div class="mt-2">
+                  <div class=" form-group row">
+                    <label class="col-3 ">Title <span class="required" style="color: red;">*</span>
+                    </label>
+                    <div class="col-9">
+                      <input class="form-control form-control-solid" id="title" placeholder="Enter Title" name="title" type="text">
+                      <span class="has-error text-danger" for="title"></span>
+                    </div>
+                    </div>
+                    <div class=" form-group row">
+                      <label class="col-3">Service Name <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="service_name" placeholder="Enter Service Name" name="service_name" type="text">
+                        <span class="has-error text-danger" for="service_name"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Price <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="price" placeholder="Enter Price" name="price" type="number">
+                        <span class="has-error text-danger" for="price"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Partners <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <select class="form-control form-control-solid" id="partner_id" name="partner_id">
+                          <option selected="selected" value="">Enter Partners</option>
+                        </select>
+                        <span class="has-error text-danger" for="partner_id"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">VAT included <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input checked="checked" name="VAT_included" type="checkbox">
+                        <span class="has-error text-danger" for="VAT_included"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">VAT <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="VAT" placeholder="Enter VAT" name="VAT" type="text">
+                        <span class="has-error text-danger" for="VAT"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Download speed (kbps) <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="download_speed" placeholder="Enter Download speed (kbps)" name="download_speed" type="number">
+                        <span class="has-error text-danger" for="download_speed"></span>
+                      </div>
+                      <span class="required">KBPS</span>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Upload speed (kbps) <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="upload_speed" placeholder="Enter Upload speed (kbps)" name="upload_speed" type="number">
+                        <span class="has-error text-danger" for="upload_speed"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Guaranteed speed limit at <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="guaranteed_speed" placeholder="Enter Guaranteed speed limit at " name="guaranteed_speed" type="number">
+                        <span class="has-error text-danger" for="guaranteed_speed"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Priority <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <select class="form-control form-control-solid" id="priority" name="priority">
+                          <option selected="selected" value="">Enter Priority</option>
+                          <option value="Low">Low</option>
+                          <option value="Normal">Normal</option>
+                          <option value="High">High</option>
+                        </select>
+                        <span class="has-error text-danger" for="priority"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Aggregation <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="aggregation" placeholder="Enter Aggregation" name="aggregation" type="text">
+                        <span class="has-error text-danger" for="aggregation"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Burst limit <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="burst_limit" placeholder="Enter Burst limit" name="burst_limit" type="number">
+                        <span class="has-error text-danger" for="burst_limit"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Burst threshold <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="burst_threshold" placeholder="Enter Burst threshold " name="burst_threshold" type="number">
+                        <span class="has-error text-danger" for="burst_threshold"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Burst time <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="burst_time" placeholder="Enter Burst time" name="burst_time" type="number">
+                        <span class="has-error text-danger" for="burst_time"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Tariff plans available in customer portal <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="tariff_plans_available_in_customer_portal" placeholder="Enter Tariff plans available in customer portal" name="tariff_plans_available_in_customer_portal" type="text">
+                        <span class="has-error text-danger" for="tariff_plans_available_in_customer_portal"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Types of billing <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="types_of_billing" placeholder="Enter Types of billing " name="types_of_billing" type="text">
+                        <span class="has-error text-danger" for="types_of_billing"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Prepaid (custom) period <span class="required" style="color: red;">*</span>
+                      </label>
+                      <div class="col-9">
+                        <select class="form-control form-control-solid" id="prepaid" name="prepaid">
+                          <option selected="selected" value="">Enter Prepaid (custom) period </option>
+                          <option value="hour">Hour</option>
+                          <option value="day">Day</option>
+                          <option value="week">Week</option>
+                          <option value="month">Month</option>
+                          <option value="year">Year</option>
+                        </select>
+                        <span class="has-error text-danger" for="prepaid"></span>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-3 ">Custom period (days) <span class="required" style="color: red;" >*</span>
+                      </label>
+                      <div class="col-9">
+                        <input class="form-control form-control-solid" id="days_period" placeholder="Enter Custom period (days) " name="days_period" type="number">
+                        <span class="has-error text-danger" for="days_period"></span>
+                      </div>
+                    </div>
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="social_network" name="example" value="1">
+                      <label class="custom-control-label" for="social_network">Availabe when registered by social network<span class="required" style="color: red;" >*</span></label>
+                    </div>
+                    <div class="form-group" style="padding-top: 10px;">
+                      <div class="col-md-6 col-md-offset-4">
+                        <button type="submit" class="btn btn-primary float-end ">Save</button>
+                      </div>
+                    </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal ends -->
+<!-- datatable starts -->
+<div class="table1 col-md-10 col-xl-10 col-lg-10 col-sm-10 layout-spacing">
+  <div class=" widget widget-content " style="position: absolute;top: 0;left: 0;">
+    <h4 class="table-header">
+      <i class="fas fa-broadcast-tower" style="font-size: 20px;color: #2262c6;"></i> ALL INTERNET
+    </h4>
+    <div class="table-responsive" style="padding-top: 20px;">
+      <table id="internet-dt" class="table table-hover" style="width:100%">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Download speed(kbps)</th>
+            <th>Upload speed(Kbps)</th>
+            <th>Aggregation</th>
+            <th>Burst limit</th>
+            <th>Burst threshold</th>
+            <th>Burst time</th>
+            <th>service name</th>
+            <th>Days</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- table body will be here -->
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Download speed(kbps)</th>
+            <th>Upload speed(Kbps)</th>
+            <th>Aggregation</th>
+            <th>Burst limit</th>
+            <th>Burst threshold</th>
+            <th>Burst time</th>
+            <th>service name</th>
+            <th>Days</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<style>
+
+    .table1{
+      position: relative;
+    }
+ @media (max-width: 768px) {
+  .table1 {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .table1 {
+    left: 200px;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .table1 {
+    left: 215px;
+    bottom: 280px;
+  }
+}
+</style>
+{% block script %}
+<script>
+  $(document).ready(function() {
+      $('#min, #max').keyup( function() { table.draw(); } );
+      $('#internet-dt').DataTable( {
+          dom: '<"row"<"col-md-6"B><"col-md-6"f> ><""rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>>',
+          buttons: {
+              buttons: [
+                  { extend: 'copy', className: 'btn btn-primary' },
+                  { extend: 'csv', className: 'btn btn-primary' },
+                  { extend: 'excel', className: 'btn btn-primary' },
+                  { extend: 'pdf', className: 'btn btn-primary' },
+                  { extend: 'print', className: 'btn btn-primary' }
+              ]
+          },
+          "language": {
+              "paginate": {
+                  "previous": "<i class='las la-angle-left'></i>",
+                  "next": "<i class='las la-angle-right'></i>"
+              }
+          },
+          "lengthMenu": [7, 10, 20, 50],
+          "pageLength": 7 
+      } );
+      // Add text input to the footer
+    
+      // Search
+      
+      $('a.toggle-btn').on( 'click', function (e) {
+          e.preventDefault();
+          // Get the column API object
+          var column = table.column( $(this).attr('data-column') );
+          // Toggle the visibility
+          column.visible( ! column.visible() );
+          $(this).toggleClass("toggle-clicked");
+      } );
+  } );
+</script>
+{% endblock %}
+ 
+
+{% endblock %}
