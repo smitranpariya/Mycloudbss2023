@@ -182,6 +182,12 @@ def settings():
     user = db.admins.find_one({"email":session['email']})
     return render_template('settings.html',user=user)
 
+@app.route('/dashboard/internet')
+def internet():
+    db=mongo.db
+    user = db.admins.find_one({"email":session['email']})
+    return render_template('internet.htm',user=user)
+
 
 
 if __name__ == "__main__":
