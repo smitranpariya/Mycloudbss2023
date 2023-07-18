@@ -186,7 +186,7 @@ def settings():
 def internet():
     db=mongo.db
     user = db.admins.find_one({"email":session['email']})
-    return render_template('internet.htm',user=user)
+    return render_template('internet.html',user=user)
 
 
 
