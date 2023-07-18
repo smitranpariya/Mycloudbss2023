@@ -27,6 +27,8 @@
     <link href="{{ url_for('static',filename='common-assets/plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static',filename='common-assets/plugins/flatpickr/custom-flatpickr.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url_for('static',filename='assets/css/elements/tooltip.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='common-assets/plugins/table/datatable/datatables.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='common-assets/plugins/table/datatable/dt-global_style.css') }}">
     <!-- Page Level Plugin/Style Ends -->
     <!-- Common Icon Ends -->
     <style>
@@ -464,6 +466,16 @@
     <script src="{{ url_for('static',filename='common-assets/plugins/apex/apexcharts.min.js') }}"></script>
     <script src="{{ url_for('static',filename='common-assets/plugins/flatpickr/flatpickr.js') }}"></script>
     <script src="{{ url_for('static',filename='assets/js/dashboard/dashboard_1.js') }}"></script>
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/datatables.js') }}"></script>
+    <!--  The following JS library files are loaded to use Copy CSV Excel Print Options-->
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/jszip.min.js') }}"></script>    
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/buttons.html5.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/buttons.print.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/buttons.print.min.js') }}"></script>
+    <!-- The following JS library files are loaded to use PDF Options-->
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/pdfmake.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='common-assets/plugins/table/datatable/button-ext/vfs_fonts.js') }}"></script>
     <!-- Page Level Plugin/Script Ends -->
 
 
