@@ -188,6 +188,12 @@ def internet():
     user = db.admins.find_one({"email":session['email']})
     return render_template('internet.html',user=user)
 
+@app.route('/dashboard/product_offering')
+def product_offering():
+    db=mongo.db
+    user = db.admins.find_one({"email":session['email']})
+    return render_template('productoffering.html',user=user)
+
 
 
 if __name__ == "__main__":
