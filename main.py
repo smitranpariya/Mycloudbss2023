@@ -194,6 +194,18 @@ def product_offering():
     user = db.admins.find_one({"email":session['email']})
     return render_template('productoffering.html',user=user)
 
+@app.route('/dashboard/load_money_payment')
+def load_money_payment():
+    db=mongo.db
+    user=db.admins.find_one({"email":session['email']})
+    return render_template('load_money_payment.html',user=user)
+
+@app.route('/dashboard/load_money_request')
+def load_money_request():
+    db=mongo.db
+    user=db.admins.find_one({"email":session['email']})
+    return render_template('load_money_request.html',user=user)
+
 
 
 if __name__ == "__main__":
