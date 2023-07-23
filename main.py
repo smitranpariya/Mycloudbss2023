@@ -206,7 +206,11 @@ def load_money_request():
     user=db.admins.find_one({"email":session['email']})
     return render_template('load_money_request.html',user=user)
 
-
+@app.route('/dashboard/invoice')
+def invoice():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('invoice.html',user=user)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 

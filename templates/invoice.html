@@ -1,0 +1,83 @@
+{% extends 'main_layout.html' %} 
+{% block title %} LTE customer {% endblock %}
+ {% block content %} 
+ <div class="abc col-xl-10 col-lg-10 col-sm-10  layout-spacing">
+    <div class="widget widget-content  ">
+      <h4 class="table-header px-3" style="padding-left: 5px;;"><i class="fas fa-receipt" style="font-size: 20px;color: #2262c6;"></i> All Invoice</h4>
+      <div class="table-responsive mb-4">
+        <div class="col-sm-12 col-md-6">
+          <div class="dataTables_length" id="last-page-dt_length"></div>
+        </div>
+        <table id="invoice-dt" class="table table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th>usercredit.id</th>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <th>usercredit.id</th>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Action</th> 
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <style>
+    .abc {
+      Position: relative;
+      left: 215px;
+      top: 80px
+    }
+  </style>
+
+{% block script %}
+
+<script>
+$(document).ready(function() {
+    $('#min, #max').keyup( function() { table.draw(); } );
+    $('#invoice-dt').DataTable( {
+        dom: '<"row"<"col-md-6"B><"col-md-6"f> ><""rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>>',
+        buttons: {
+            buttons: [
+                { extend: 'copy', className: 'btn btn-primary' },
+                { extend: 'csv', className: 'btn btn-primary' },
+                { extend: 'excel', className: 'btn btn-primary' },
+                { extend: 'pdf', className: 'btn btn-primary' },
+                { extend: 'print', className: 'btn btn-primary' }
+            ]
+        },
+        "language": {
+            "paginate": {
+                "previous": "<i class='las la-angle-left'></i>",
+                "next": "<i class='las la-angle-right'></i>"
+            }
+        },
+        "lengthMenu": [7, 10, 20, 50],
+        "pageLength": 7 
+    } );
+    // Add text input to the footer
+  
+    // Search
+    
+    $('a.toggle-btn').on( 'click', function (e) {
+        e.preventDefault();
+        // Get the column API object
+        var column = table.column( $(this).attr('data-column') );
+        // Toggle the visibility
+        column.visible( ! column.visible() );
+        $(this).toggleClass("toggle-clicked");
+    } );
+} );
+</script>
+
+{% endblock %}
+
+   {% endblock %}
