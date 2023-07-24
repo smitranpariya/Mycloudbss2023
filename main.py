@@ -212,5 +212,11 @@ def invoice():
     user=db.admins.find_one({'email':session['email']})
     return render_template('invoice.html',user=user)
 
+@app.route('/dashboard/all_user_commision')
+def all_user_commission():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('all_user_commision.html',user=user)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
