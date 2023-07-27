@@ -277,6 +277,13 @@ def payments():
     user=db.admins.find_one({'email':session['email']})
     return render_template('Payments.html',user=user)
 
+@app.route('/dashboard/lost_simcard_request')
+def lostsim_req():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('lost_sim.html',user=user)
+
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
