@@ -59,8 +59,7 @@ def doLogin():
 @app.route("/forget_password")
 def forget_password():
     return render_template("FORGET PASSWORD.html")
-
-
+# ok
 @app.route("/dashboard")
 def dashboard():
     if "email" in session:
