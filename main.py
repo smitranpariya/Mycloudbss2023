@@ -241,5 +241,11 @@ def manufacturer():
     user=db.admins.find_one({'email':session['email']})
     return render_template('manufacturer.html',user=user)
 
+@app.route('/dashboard/stock_loactions')
+def stock_locations():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('stock_location.html',user=user)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
