@@ -8,7 +8,7 @@
         <div class="col-sm-12 col-md-6">
           <div class="dataTables_length" id="last-page-dt_length"></div>
         </div>
-        <table id="export-dt" class="table table-hover" style="width:100%">
+        <table id="products-dt" class="table table-hover" style="width:100%">
           <thead>
             <tr>
               <th>id</th>
@@ -54,4 +54,45 @@
       top: 80px
     }
   </style>
-   {% endblock %}
+  
+{% block script %}
+<script>
+  $(document).ready(function() {
+      $('#min, #max').keyup( function() { table.draw(); } );
+      $('#products-dt').DataTable( {
+          dom: '<"row"<"col-md-6"B><"col-md-6"f> ><""rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>>',
+          buttons: {
+              buttons: [
+                  { extend: 'copy', className: 'btn btn-primary' },
+                  { extend: 'csv', className: 'btn btn-primary' },
+                  { extend: 'excel', className: 'btn btn-primary' },
+                  { extend: 'pdf', className: 'btn btn-primary' },
+                  { extend: 'print', className: 'btn btn-primary' }
+              ]
+          },
+          "language": {
+              "paginate": {
+                  "previous": "<i class='las la-angle-left'></i>",
+                  "next": "<i class='las la-angle-right'></i>"
+              }
+          },
+          "lengthMenu": [7, 10, 20, 50],
+          "pageLength": 7 
+      } );
+      // Add text input to the footer
+    
+      // Search
+      
+      $('a.toggle-btn').on( 'click', function (e) {
+          e.preventDefault();
+          // Get the column API object
+          var column = table.column( $(this).attr('data-column') );
+          // Toggle the visibility
+          column.visible( ! column.visible() );
+          $(this).toggleClass("toggle-clicked");
+      } );
+  } );
+</script>
+{% endblock %}
+
+{% endblock %}
