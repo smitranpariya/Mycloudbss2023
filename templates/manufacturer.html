@@ -1,0 +1,41 @@
+{% extends 'main_layout.html' %} 
+{% block title %} LTE customer {% endblock %}
+ {% block content %} 
+ <div class="abc col-xl-10 col-lg-10 col-sm-10  layout-spacing">
+    <div class="widget widget-content  br-6">
+      <h4 class="table-header">All Manufacturer</h4>
+      <div class="table-responsive mb-4">
+        <div class="col-sm-12 col-md-6">
+          <div class="dataTables_length" id="last-page-dt_length"></div>
+        </div>
+        <table id="export-dt" class="table table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Action</th>
+              <th class="no-content"></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>Address</th>
+              <th>Action</th>         
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <style>
+    .abc {
+      Position: relative;
+      left: 215px;
+      top: 80px
+    }
+  </style>
+   {% endblock %}
