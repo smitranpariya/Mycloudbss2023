@@ -271,6 +271,12 @@ def passbook():
     user=db.admins.find_one({'email':session['email']})
     return render_template('passbook.html',user=user)
 
+@app.route('/dashboard/payments')
+def payments():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('Payments.html',user=user)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
