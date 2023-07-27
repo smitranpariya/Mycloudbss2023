@@ -253,6 +253,11 @@ def logs():
     user=db.admins.find_one({'email':session['email']})
     return render_template('logs.html',user=user)#here name is being changed
 
+@app.route('/dashboard/pending_recharges')
+def pending_recharges():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('pending_recharges.html',user=user)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
