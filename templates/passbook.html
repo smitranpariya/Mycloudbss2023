@@ -1,0 +1,86 @@
+{% extends 'main_layout.html' %} 
+{% block title %} LTE customer {% endblock %}
+ {% block content %} 
+ <div class="abc col-xl-10 col-lg-10 col-sm-10  layout-spacing">
+    <div class="widget widget-content  br-6">
+      <h4 class="table-header">All Passbook</h4>
+      <div class="table-responsive mb-4">
+        <table id="passbook-dt" class="table table-hover" style="width:100%">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Previous Balance</th>
+              <th>Credit</th>
+              <th>Debit</th>
+              <th>Current Balance</th>
+              <th>Trx No</th>
+              <th>Description</th>
+              <th>Datetime</th>
+              <th class="no-content"></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <th>Id</th>
+              <th>Previous Balance</th>
+              <th>Credit</th>
+              <th>Debit</th>
+              <th>Current Balance</th>
+              <th>Trx No</th>
+              <th>Description</th>
+              <th>Datetime</th>
+              <th class="no-content"></th>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+  <style>
+    .abc {
+      Position: relative;
+      left: 215px;
+      top: 80px
+    }
+  </style>
+  {% block script %}
+  <script>
+    $(document).ready(function() {
+        $('#min, #max').keyup( function() { table.draw(); } );
+        $('#passbook-dt').DataTable( {
+            dom: '<"row"<"col-md-6"B><"col-md-6"f> ><""rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>>',
+            buttons: {
+                buttons: [
+                    { extend: 'copy', className: 'btn btn-primary' },
+                    { extend: 'csv', className: 'btn btn-primary' },
+                    { extend: 'excel', className: 'btn btn-primary' },
+                    { extend: 'pdf', className: 'btn btn-primary' },
+                    { extend: 'print', className: 'btn btn-primary' }
+                ]
+            },
+            "language": {
+                "paginate": {
+                    "previous": "<i class='las la-angle-left'></i>",
+                    "next": "<i class='las la-angle-right'></i>"
+                }
+            },
+            "lengthMenu": [7, 10, 20, 50],
+            "pageLength": 7 
+        } );
+        // Add text input to the footer
+      
+        // Search
+        
+        $('a.toggle-btn').on( 'click', function (e) {
+            e.preventDefault();
+            // Get the column API object
+            var column = table.column( $(this).attr('data-column') );
+            // Toggle the visibility
+            column.visible( ! column.visible() );
+            $(this).toggleClass("toggle-clicked");
+        } );
+    } );
+  </script>
+  {% endblock %}
+   {% endblock %}
