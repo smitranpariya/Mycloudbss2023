@@ -251,7 +251,7 @@ def stock_locations():
 def logs():
     db=mongo.db
     user=db.admins.find_one({'email':session['email']})
-    return render_template('logs.html',user=user)
+    return render_template('logs.html',user=user)#here name is being changed
 
 
 if __name__ == "__main__":
