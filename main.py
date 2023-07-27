@@ -259,5 +259,11 @@ def pending_recharges():
     user=db.admins.find_one({'email':session['email']})
     return render_template('pending_recharges.html',user=user)
 
+@app.route('/dashboard/passbook')
+def passbook():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('passbook.html',user=user)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
