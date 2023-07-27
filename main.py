@@ -259,5 +259,12 @@ def pending_recharges():
     user=db.admins.find_one({'email':session['email']})
     return render_template('pending_recharges.html',user=user)
 
+@app.route('/dashboard/custom_offering')
+def custom_offering():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('custom_offering.html',user=user)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
