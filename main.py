@@ -283,6 +283,11 @@ def lostsim_req():
     user=db.admins.find_one({'email':session['email']})
     return render_template('lost_sim.html',user=user)
 
+@app.route('/dashboard/call_requests')
+def call_req():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('call_requests.html',user=user)
 
 
 if __name__ == "__main__":
