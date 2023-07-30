@@ -289,6 +289,12 @@ def call_req():
     user=db.admins.find_one({'email':session['email']})
     return render_template('call_requests.html',user=user)
 
+@app.route('/dashboard/active_offering')
+def call_req():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('call_requests.html',user=user)
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=5000,debug=True) 
