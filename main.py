@@ -251,7 +251,7 @@ def stock_locations():
 def logs():
     db=mongo.db
     user=db.admins.find_one({'email':session['email']})
-    return render_template('logs.html',user=user)#here name is being changed
+    return render_template('logs.html',user=user)#here name is being not changed
 
 @app.route('/dashboard/pending_recharges')
 def pending_recharges():
@@ -288,6 +288,19 @@ def call_req():
     db=mongo.db
     user=db.admins.find_one({'email':session['email']})
     return render_template('call_requests.html',user=user)
+
+@app.route('/dashboard/active_offering')
+def call_req():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('call_requests.html',user=user)
+
+@app.route('/dashboard/wifi_offering')
+def wifi_offer():
+    db=mongo.db
+    user=db.admins.find_one({'email':session['email']})
+    return render_template('wifi_offering.html',user=user)
+
 
 
 if __name__ == "__main__":
