@@ -290,10 +290,10 @@ def call_req():
     return render_template('call_requests.html',user=user)
 
 @app.route('/dashboard/active_offering')
-def call_req():
+def active_offering():
     db=mongo.db
     user=db.admins.find_one({'email':session['email']})
-    return render_template('call_requests.html',user=user)
+    return render_template('active_offering.html',user=user)
 
 @app.route('/dashboard/wifi_offering')
 def wifi_offer():
